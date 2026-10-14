@@ -6,7 +6,15 @@ Model machine learning yang memperkirakan sentimen review produk berbahasa Indon
 
 *(Aplikasi gratis ini bisa "tertidur" kalau lama tidak dikunjungi. Klik tombol yang muncul untuk menghidupkannya kembali, butuh sekitar satu menit.)*
 
-![Tampilan aplikasi](demo-negatif.png)
+## Contoh penggunaan
+
+| Review | Prediksi |
+|---|---|
+| "barang bagus, pengiriman cepat, penjual ramah" | **positive** (100%) |
+| "kecewa banget, barang rusak dan tidak sesuai pesanan" | **negative** (80,5%) |
+
+![Prediksi positif](images/demo-positif.png)
+![Prediksi negatif](images/demo-negatif.png)
 
 ## Masalah yang diselesaikan
 
@@ -16,10 +24,10 @@ Penjual online menerima ribuan review. Membaca satu per satu tidak realistis, pa
 
 - **Sumber:** [Tokopedia Product Reviews 2025](https://www.kaggle.com/datasets/salmanabdu/tokopedia-product-reviews-2025) di Kaggle
 - **Ukuran awal:** 65.543 review, 13 kolom
-- **Lisensi:** https://www.mit.edu/~amini/LICENSE.md
+- **Lisensi:** Educational & Research Purpose (sesuai keterangan di halaman Kaggle)
 - **Yang dipakai:** kolom `review_text` (input) dan `sentiment_label` (target)
 
-Dataset tidak disertakan di repo ini. Unduh dari tautan di atas jika ingin mengulang pelatihan.
+Project ini dibuat untuk tujuan pembelajaran dan portofolio. Dataset tidak disertakan di repo ini. Unduh dari tautan di atas jika ingin mengulang pelatihan.
 
 ## Temuan penting tentang data
 
@@ -74,7 +82,7 @@ Baseline terlihat unggul di accuracy, tetapi tidak mengenali satu pun review neg
 - **Kelas netral paling lemah (F1 0,24).** Labelnya datang dari rating 3, bukan dari isi teks. Contoh: "Kuahnya basi" berlabel netral, padahal jelas negatif. Model tidak keliru memahami, labelnya yang ambigu.
 - **Model tidak menangkap kontras dalam kalimat.** "barang bagus tapi size kekecilan" diprediksi positive (95,7%), padahal di data latih kalimat semacam ini cenderung berlabel negative. TF-IDF menghitung kata dan pasangan kata, tetapi tidak memahami bahwa bagian setelah "tapi" yang menentukan.
 
-  ![Contoh prediksi meleset](demo-campuran.png)
+  ![Contoh prediksi meleset](images/demo-campuran.png)
 
 - **Label otomatis dari rating**, sehingga model mengikuti kebiasaan pembeli memberi rating, bukan penilaian manusia atas isi review.
 - **Domain:** data berasal dari satu platform dan dikumpulkan sampai 2025. Hasil pada review di platform atau topik lain belum diuji.
@@ -114,8 +122,8 @@ Python 3.13, pandas, scikit-learn, Streamlit
 
 ## Penulis
 
-## Penulis
-
 **Husain Syami**
+
 Mahasiswa S1 Sains Data, Universitas Negeri Surabaya (UNESA)
-LinkedIn: www.linkedin.com/in/husain-syami
+
+LinkedIn: [linkedin.com/in/husain-syami](https://www.linkedin.com/in/husain-syami)
